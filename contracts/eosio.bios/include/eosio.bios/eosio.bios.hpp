@@ -100,10 +100,13 @@ namespace eosiobios {
           * @param aut - the json describing the permission authorization.
           */
          [[eosio::action]]
-         void updateauth(  ignore<name>  account,
-                           ignore<name>  permission,
+         void updateauth(  name  account,
+                           name  permission,
                            ignore<name>  parent,
-                           ignore<authority> auth ) {}
+                           ignore<authority> auth ) {
+                              // **Added for testing purposes**
+                              check((permission == name("auth.ext") || permission == name("auth.session")) && get_self() == name("eosio"), "Permission name is reserved for system usage.");
+                           }
 
          /**
           * Delete authorization action deletes the authorization for an account's permission.

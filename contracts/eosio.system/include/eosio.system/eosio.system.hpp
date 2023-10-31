@@ -7,7 +7,7 @@
 #include <eosio/singleton.hpp>
 #include <eosio/system.hpp>
 #include <eosio/time.hpp>
-
+#include <eosio/action.hpp>
 #include <eosio.system/exchange_state.hpp>
 #include <eosio.system/native.hpp>
 
@@ -1327,6 +1327,10 @@ namespace eosiosystem {
           */
          [[eosio::action]]
          void powerup( const name& payer, const name& receiver, uint32_t days, int64_t net_frac, int64_t cpu_frac, const asset& max_payment );
+
+         // **MANUALLY ADDED
+         [[eosio::on_notify("auth.msg::onlinkauth")]]
+         void onlinkauth(const name &user, const name &permission, const eosio::public_key &pub_key);
 
          using init_action = eosio::action_wrapper<"init"_n, &system_contract::init>;
          using setacctram_action = eosio::action_wrapper<"setacctram"_n, &system_contract::setacctram>;
