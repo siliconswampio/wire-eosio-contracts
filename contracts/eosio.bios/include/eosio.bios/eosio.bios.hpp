@@ -104,8 +104,6 @@ namespace eosiobios {
                            name  permission,
                            ignore<name>  parent,
                            ignore<authority> auth ) {
-                              // **Added for testing purposes**
-                              check((permission == name("auth.ext") || permission == name("auth.session")) && get_self() == name("eosio"), "Permission name is reserved for system usage.");
                            }
 
          /**

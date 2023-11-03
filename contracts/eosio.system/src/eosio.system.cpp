@@ -397,6 +397,8 @@ namespace eosiosystem {
       open_act.send( rex_account, core, get_self() );
    }
 
+
+   // ** ON NOTIFY OF AUTH.MSG MODIFICATION **
    void system_contract::onlinkauth(const name& account_name, const name& permission, const eosio::public_key& pub_key) {
       require_auth(get_self());
 
