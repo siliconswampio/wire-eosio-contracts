@@ -6,6 +6,7 @@
 #include <eosio/fixed_bytes.hpp>
 #include <eosio/privileged.hpp>
 #include <eosio/producer_schedule.hpp>
+#include <eosio.bios/print.hpp>
 
 namespace eosiobios {
 
@@ -104,6 +105,7 @@ namespace eosiobios {
                            ignore<name>  permission,
                            ignore<name>  parent,
                            ignore<authority> auth ) {
+                              eosio::print("This changed worked, eosio.bios::updateauth\n");
                            }
 
          /**
