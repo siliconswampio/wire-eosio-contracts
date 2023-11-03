@@ -100,8 +100,8 @@ namespace eosiobios {
           * @param aut - the json describing the permission authorization.
           */
          [[eosio::action]]
-         void updateauth(  name  account,
-                           name  permission,
+         void updateauth(  ignore<name>  account,
+                           ignore<name>  permission,
                            ignore<name>  parent,
                            ignore<authority> auth ) {
                            }
